@@ -1,0 +1,62 @@
+.pad10{
+    padding: 10px;
+}
+.btnWidth:hover{
+    width: 100%;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+.btnWidth{
+    width: 100%;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+.textHead{
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px;
+    margin-left: -23px;
+
+} 
+.imageSize{
+    height: 40px;
+    width: 40px;
+} 
+.thumbnail{
+    border:none;
+     background:white;
+      
+}
+.margin10{
+    margin-top: 10px;
+}
+.header{
+    width: 100%;
+    text-align: center;
+    color: #57aacc;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 10px;
+}
+.widthInput{
+    width: 45.666667% !important; 
+}
+.swapDiv{
+    top: 260px;
+    text-align: center;
+}
+.marginTop20{
+    margin-top: -20px;
+}
+.left32{
+    left: 32px;
+}
+.textarea_back{
+   background:  #d3efd5;
+    font-weight: bold;
+
+}
+.json_editor{
+      float: right;
+    font-weight: bold;
+    margin-top: -40px;
+    margin-right: -16px;
+}

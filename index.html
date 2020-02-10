@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Encryption</title>
+
+
+    <link rel="shortcut icon" href="assets/images/encrypted.png" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="bootstrap/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap/bootstarp.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/Crypt.css">
+</head>
+
+<body>
+    <div class="marginTop20">
+
+        <h3 class="header">Encryption/Decryption</h3>
+
+    </div>
+    <div class="pad10">
+
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-xs-6">
+
+                <div class="thumbnail">
+                    <div class="col-sm-1 col-md-1 col-xs-1">
+                        <img src="assets/images/secure.png" class="imageSize" />
+                    </div>
+                    <div class="col-sm-11 col-md-11 col-xs-11">
+                        <p class="textHead" id="Key_p">Key</p>
+                    </div>
+                </div>
+
+            </div>
+            <!--<div>
+                <a href="https://jsoneditoronline.org/" target="_blank" style="font-weight: bold;">JSON EDITOR</p>
+             </div>-->
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-2">
+
+                <input type="text" placeholder="Enter the Key" id="key" class="form-control textarea_back" value="eyJ0eXAiOiJKV1Qi">
+            </div>
+            <div class="dropdown col-sm-2">
+                <button class="btn btn-primary dropdown-toggle btnWidth" type="button" data-toggle="dropdown">Popular keys
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu left32">
+                    <li>
+                        <a href="#" onClick="keySize('eyJ0eXAiOiJKV1Qi')">Mobile</a>
+</li>
+<li>
+    <a href="#" onClick="keySize('1ewfdr432geasdcs')">Website</a>
+</li>
+
+</ul>
+</div>
+<div class="col-sm-2">
+    <button class="btn btn-danger btnWidth" type="button" onClick="encryptJSON()">Encrypt</button>
+</div>
+<div class="col-sm-2">
+    <button type="button" onClick="decryptJSON()" class="btn btn-success btnWidth">Decrypt</button>
+</div>
+<div class="col-sm-2">
+    <button type="button" onClick="beautify()" id="beautify" class="btn btn-warning btnWidth" disabled=true>Beautify</button>
+</div>
+<div class="col-sm-2">
+    <button type="button" onClick="editor()" id="beautify" class="btn btn-info btnWidth" >JSON Editor</button>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-5 widthInput">
+
+        <div class="row margin10">
+            <div class="col-sm-6 col-md-6 col-xs-6">
+
+                <div class="thumbnail">
+                    <div class="col-sm-3 col-md-3 col-xs-3">
+                        <img src="assets/images/data_protection.png" class="imageSize" />
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-xs-9">
+                        <p class="textHead">Input</p>
+                      
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <textarea placeholder="Enter the text" id="inputText" class="form-control textarea_back" rows="22"></textarea>
+    </div>
+    <div class="col-sm-1 swapDiv" onClick="swap()">
+<img src="assets/images/swap.png" class="imageSize">
+</div>
+<div class="col-sm-5 widthInput">
+
+    <div class="row margin10">
+        <div class="col-sm-6 col-md-6 col-xs-6 ">
+
+            <div class="thumbnail">
+                <div class="col-sm-3 col-md-3 col-xs-3">
+                    <img src="assets/images/encrypted.png" class="imageSize" />
+                </div>
+                <div class="col-sm-9 col-md-9 col-xs-9">
+                    <p class="textHead">Output</p>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <textarea placeholder="Output text" id="outputText" class="form-control textarea_back" rows="22"></textarea>
+</div>
+
+</div>
+
+</div>
+<script src="AES.js"></script>
+<script src="Crypt.js"></script>
+
+</body>
+
+<!-- Latest compiled JavaScript -->
+
+</html>
