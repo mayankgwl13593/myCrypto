@@ -19,11 +19,11 @@
 <body>
     <script src="./bootstrap/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
        <script type="text/javascript" src="./bootstrap/jquery.json-editor.min.js"></script>
+<!--       
     <div class="marginTop20">
-
         <h3 class="header">Encryption/Decryption</h3>
+    </div>-->
 
-    </div>
     <div class="pad10">
 
         <div class="row">
@@ -44,11 +44,11 @@
              </div>-->
         </div>
 
+        <span class="key_note"><b>Note: </b>Please check the key in case you are finding any difficuality to decrypt. </span>
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-sm-4">
 
-        <div class="row">
-            <div class="col-sm-2">
-
-                <input type="text" placeholder="Enter the Key" id="key" class="form-control textarea_back" value="eyJ0eXAiOiJKV1Qi">
+                <input type="text" placeholder="Enter the Key" id="key" class="form-control textarea_back" value="eyJ0eXAiOiJKV1Qi" spellcheck="false">
             </div>
             <div class="dropdown col-sm-2">
                 <button class="btn btn-primary dropdown-toggle btnWidth" type="button" data-toggle="dropdown">Popular keys
@@ -72,9 +72,9 @@
 <div class="col-sm-2">
     <button type="button" onClick="rawJson()" id="beautify" class="btn btn-warning btnWidth" disabled=true>Raw Json</button>
 </div>
-<div class="col-sm-2">
+<!--<div class="col-sm-2">
     <button type="button" onClick="editor()" id="beautify" class="btn btn-info btnWidth" >JSON Editor</button>
-</div>
+</div>-->
 </div>
 
 <div class="row">
