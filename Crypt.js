@@ -1,8 +1,14 @@
 var key_Size = 128;
 document.getElementById("Key_p").textContent = "Key";
+document.getElementById("json-div").style.display = "none";
+document.getElementById('outputText').style.display = "block";
+
 function encryptJSON() {
 
-  var key = CryptoJS.enc.Utf8.parse(document.getElementById("key").value);
+    document.getElementById("json-div").style.display = "none";
+    document.getElementById('outputText').style.display = "block";
+
+    var key = CryptoJS.enc.Utf8.parse(document.getElementById("key").value);
     var iv = CryptoJS.enc.Utf8.parse(document.getElementById("key").value);
 
     var encrypted = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(document.getElementById("inputText").value), key,
@@ -19,6 +25,8 @@ function encryptJSON() {
 }
 function decryptJSON() {
     //eyJ0eXAiOiJKV1Qi
+    document.getElementById("json-div").style.display = "block";
+    document.getElementById('outputText').style.display = "none";
 
     encrypted = document.getElementById("inputText").value;
     var key = CryptoJS.enc.Utf8.parse(document.getElementById("key").value);
@@ -30,15 +38,42 @@ function decryptJSON() {
         mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Pkcs7
     });
+
     document.getElementById("outputText").value = decrypted.toString(CryptoJS.enc.Utf8);
+    let editor = new JsonEditor('#json-display', getJson());
+    editor.load(getJson());
+
     if (document.getElementById("outputText").value != null)
         document.getElementById("beautify").disabled = false;
 
 }
-function beautify() {
-    document.getElementById("outputText").value = JSON.stringify(JSON.parse(document.getElementById("outputText").value), null, 2)
+function getJson() {
+    try {
+        return JSON.parse($('#outputText').val());
+    } catch (ex) {
+        alert('Wrong JSON Format: ' + ex);
+    }
 }
+
+function beautify() {
+
+    document.getElementById("json-div").style.display = "block";
+    document.getElementById('outputText').style.display = "none";
+
+    let editor = new JsonEditor('#json-display', getJson());
+    editor.load(getJson());
+
+    //document.getElementById("outputText").value = JSON.stringify(JSON.parse(document.getElementById("outputText").value), null, 2)
+}
+function rawJson(){
+    document.getElementById("json-div").style.display = "none";
+    document.getElementById('outputText').style.display = "block";
+}
+
 function swap() {
+    document.getElementById("json-div").style.display = "none";
+    document.getElementById('outputText').style.display = "block";
+
     var swap_value = document.getElementById("outputText").value;
     document.getElementById("outputText").value = document.getElementById("inputText").value;
     document.getElementById("inputText").value = swap_value;
@@ -52,8 +87,4 @@ function editor() {
     copyText.select();
     document.execCommand("copy");
     window.open('https://jsoneditoronline.org/', "_blank");
-
-
-
-
 }

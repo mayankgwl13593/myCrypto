@@ -50,8 +50,9 @@
     left: 32px;
 }
 .textarea_back{
-   background:  #d3efd5;
-    font-weight: bold;
+      background: #1c2833;
+    /* font-weight: bold; */
+    color: lightgreen;
 
 }
 .json_editor{
