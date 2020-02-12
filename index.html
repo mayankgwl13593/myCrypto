@@ -10,16 +10,18 @@
 
     <link rel="shortcut icon" href="assets/images/encrypted.png" />
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <script src="bootstrap/jquery-3.3.1.min.js"></script>
-    <script src="bootstrap/bootstarp.min.js"></script>
-    
     <link rel="stylesheet" href="bootstrap/Crypt.css">
+
+   <script src="bootstrap/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap/bootstarp.min.js"></script>
+
 </head>
 
 <body>
-    <script src="./bootstrap/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-       <script type="text/javascript" src="./bootstrap/jquery.json-editor.min.js"></script>
-<!--       
+    <script src="./bootstrap/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./bootstrap/jquery.json-editor.min.js"></script>
+    <!--       
     <div class="marginTop20">
         <h3 class="header">Encryption/Decryption</h3>
     </div>-->
@@ -44,18 +46,18 @@
              </div>-->
         </div>
 
-        <span class="key_note"><b>Note: </b>Please check the key in case you are finding any difficulty to decrypt. </span>
+        <span class="key_note"><b>Note: </b>Please check the key in case you are finding any difficuality to decrypt. </span>
         <div class="row" style="margin-top: 5px;">
-            <div class="col-sm-4">
+<div class="col-sm-4">
 
-                <input type="text" placeholder="Enter the Key" id="key" class="form-control textarea_back" value="eyJ0eXAiOiJKV1Qi" spellcheck="false">
-            </div>
-            <div class="dropdown col-sm-2">
-                <button class="btn btn-primary dropdown-toggle btnWidth" type="button" data-toggle="dropdown">Popular keys
+    <input type="text" placeholder="Enter the Key" id="key" class="form-control textarea_back" value="eyJ0eXAiOiJKV1Qi" spellcheck="false">
+</div>
+<div class="dropdown col-sm-2">
+    <button class="btn btn-primary dropdown-toggle btnWidth" type="button" data-toggle="dropdown">Popular keys
                 <span class="caret"></span></button>
-                <ul class="dropdown-menu left32">
-                    <li>
-                        <a href="#" onClick="keySize('eyJ0eXAiOiJKV1Qi')">Mobile</a>
+    <ul class="dropdown-menu left32">
+        <li>
+            <a href="#" onClick="keySize('eyJ0eXAiOiJKV1Qi')">Mobile</a>
 </li>
 <li>
     <a href="#" onClick="keySize('1ewfdr432geasdcs')">Website</a>
@@ -70,7 +72,7 @@
     <button type="button" onClick="decryptJSON()" class="btn btn-success btnWidth">Decrypt</button>
 </div>
 <div class="col-sm-2">
-    <button type="button" onClick="rawJson()" id="beautify" class="btn btn-warning btnWidth" disabled=true>Raw Json</button>
+    <button type="button" onClick="rawJson()" id="rawparseJson" class="btn btn-warning btnWidth" disabled=true value='Raw Json'></button>
 </div>
 <!--<div class="col-sm-2">
     <button type="button" onClick="editor()" id="beautify" class="btn btn-info btnWidth" >JSON Editor</button>
@@ -89,7 +91,7 @@
                     </div>
                     <div class="col-sm-9 col-md-9 col-xs-9">
                         <p class="textHead">Input</p>
-                      
+
                     </div>
                 </div>
 
@@ -111,16 +113,16 @@
                 </div>
                 <div class="col-sm-9 col-md-9 col-xs-9">
                     <p class="textHead">Output</p>
-                   
+
                 </div>
             </div>
 
         </div>
     </div>
     <textarea placeholder="Output text" id="outputText" class="form-control textarea_back" rows="22" spellcheck="false"></textarea>
-     <div id="json-div">
-     <pre id="json-display" style="height:460px;" spellcheck="false"></pre>
-     </div>
+    <div id="json-div">
+        <pre id="json-display" style="height:460px;" spellcheck="false"></pre>
+</div>
 </div>
 
 </div>
