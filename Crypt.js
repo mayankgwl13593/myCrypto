@@ -1,7 +1,9 @@
 var key_Size = 128;
+var rawJsonBoolean = true;
 document.getElementById("Key_p").textContent = "Key";
 document.getElementById("json-div").style.display = "none";
 document.getElementById('outputText').style.display = "block";
+document.getElementById("rawparseJson").innerHTML = "Raw Json";
 
 function encryptJSON() {
 
@@ -20,7 +22,7 @@ function encryptJSON() {
         });
     var encoded = btoa(encrypted);
     document.getElementById("outputText").value = atob(encoded);
-    document.getElementById("beautify").disabled = true;
+    document.getElementById("rawparseJson").disabled = true;
 
 }
 function decryptJSON() {
@@ -44,7 +46,7 @@ function decryptJSON() {
     editor.load(getJson());
 
     if (document.getElementById("outputText").value != null)
-        document.getElementById("beautify").disabled = false;
+        document.getElementById("rawparseJson").disabled = false;
 
 }
 function getJson() {
@@ -64,9 +66,19 @@ function beautify() {
     editor.load(getJson());
 }
 function rawJson() {
+    if (rawJsonBoolean) {
+        rawJsonBoolean = false;
+        document.getElementById("rawparseJson").innerHTML = "Parse Json";
+        document.getElementById("json-div").style.display = "none";
+        document.getElementById('outputText').style.display = "block";
+    }
+    else {
+        rawJsonBoolean = true;
+        document.getElementById("rawparseJson").innerHTML = "Raw Json";
+        document.getElementById("json-div").style.display = "block";
+        document.getElementById('outputText').style.display = "none";
+    }
 
-    document.getElementById("json-div").style.display = "none";
-    document.getElementById('outputText').style.display = "block";
 }
 function swap() {
 
@@ -74,6 +86,13 @@ function swap() {
     document.getElementById('outputText').style.display = "block";
 
     var swap_value = document.getElementById("outputText").value;
+    try {
+        let value = JSON.parse(swap_value);
+        document.getElementById("rawparseJson").disabled = true;
+    }
+    catch (e) {
+        document.getElementById("rawparseJson").disabled = false;
+    }
     document.getElementById("outputText").value = document.getElementById("inputText").value;
     document.getElementById("inputText").value = swap_value;
 
