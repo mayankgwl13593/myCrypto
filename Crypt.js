@@ -51,26 +51,25 @@ function getJson() {
     try {
         return JSON.parse($('#outputText').val());
     } catch (ex) {
-        alert('Wrong JSON Format: ' + ex);
+        console.log(ex);
+        document.getElementById("json-div").style.display = "none";
+        document.getElementById('outputText').style.display = "block";
     }
 }
-
 function beautify() {
 
     document.getElementById("json-div").style.display = "block";
     document.getElementById('outputText').style.display = "none";
-
     let editor = new JsonEditor('#json-display', getJson());
     editor.load(getJson());
-
-    //document.getElementById("outputText").value = JSON.stringify(JSON.parse(document.getElementById("outputText").value), null, 2)
 }
-function rawJson(){
+function rawJson() {
+
     document.getElementById("json-div").style.display = "none";
     document.getElementById('outputText').style.display = "block";
 }
-
 function swap() {
+
     document.getElementById("json-div").style.display = "none";
     document.getElementById('outputText').style.display = "block";
 
@@ -79,12 +78,12 @@ function swap() {
     document.getElementById("inputText").value = swap_value;
 
 }
-function keySize(keysize1) {
-    document.getElementById("key").value = keysize1;
-}
 function editor() {
     var copyText = document.getElementById("outputText");
     copyText.select();
     document.execCommand("copy");
     window.open('https://jsoneditoronline.org/', "_blank");
+}
+function keySize(keysize1) {
+    document.getElementById("key").value = keysize1;
 }
