@@ -69,3 +69,7 @@
     font-family: cursive;
     color: crimson;
 }
+.error_decrypt{
+    width: 50%;
+    margin: 5px auto;
+}
