@@ -4,6 +4,7 @@ document.getElementById("Key_p").textContent = "Key";
 document.getElementById("json-div").style.display = "none";
 document.getElementById('outputText').style.display = "block";
 document.getElementById("rawparseJson").innerHTML = "Raw Json";
+document.getElementById("error_decryptId").style.display = "none";
 
 function encryptJSON() {
 
@@ -29,19 +30,28 @@ function decryptJSON() {
     //eyJ0eXAiOiJKV1Qi
     document.getElementById("json-div").style.display = "block";
     document.getElementById('outputText').style.display = "none";
+   
 
-    encrypted = document.getElementById("inputText").value;
-    var key = CryptoJS.enc.Utf8.parse(document.getElementById("key").value);
-    var iv = CryptoJS.enc.Utf8.parse(document.getElementById("key").value);
+    try {
+         document.getElementById("error_decryptId").style.display = "none";
+        encrypted = document.getElementById("inputText").value;
+        var key = CryptoJS.enc.Utf8.parse(document.getElementById("key").value);
+        var iv = CryptoJS.enc.Utf8.parse(document.getElementById("key").value);
 
-    let decrypted = CryptoJS.AES.decrypt(encrypted, key, {
-        keySize: key_Size / 8,
-        iv: iv,
-        mode: CryptoJS.mode.CBC,
-        padding: CryptoJS.pad.Pkcs7
-    });
+        let decrypted = CryptoJS.AES.decrypt(encrypted, key, {
+            keySize: key_Size / 8,
+            iv: iv,
+            mode: CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.Pkcs7
+        });
 
-    document.getElementById("outputText").value = decrypted.toString(CryptoJS.enc.Utf8);
+        document.getElementById("outputText").value = decrypted.toString(CryptoJS.enc.Utf8);
+    }
+    catch(e){
+       document.getElementById("error_decryptId").style.display = "block";
+       console.log(e)
+    }
+  
     let editor = new JsonEditor('#json-display', getJson());
     editor.load(getJson());
 
@@ -56,6 +66,7 @@ function getJson() {
         console.log(ex);
         document.getElementById("json-div").style.display = "none";
         document.getElementById('outputText').style.display = "block";
+        document.getElementById("error_decryptId").style.display = "block";
     }
 }
 function beautify() {
