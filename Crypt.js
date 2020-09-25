@@ -48,7 +48,8 @@ function decryptJSON() {
         document.getElementById("outputText").value = decrypted.toString(CryptoJS.enc.Utf8);
     }
     catch(e){
-       document.getElementById("error_decryptId").style.display = "block";
+       // document.getElementById("error_decryptId").style.display = "block";
+        alert('Seems like either you did enter the invalid key or input is wrong.');
        console.log(e)
     }
   
@@ -66,7 +67,8 @@ function getJson() {
         console.log(ex);
         document.getElementById("json-div").style.display = "none";
         document.getElementById('outputText').style.display = "block";
-        document.getElementById("error_decryptId").style.display = "block";
+       // document.getElementById("error_decryptId").style.display = "block";
+         alert('Seems like either you did enter the invalid key or input is wrong.');
     }
 }
 function beautify() {
